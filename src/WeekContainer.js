@@ -1,4 +1,5 @@
 import React from 'react';
+import apiConfig from './apiKey'
 
 class WeekContainer extends React.Component {
     render() {
