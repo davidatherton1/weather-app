@@ -2,7 +2,6 @@ import React from 'react';
 import apiConfig from './apiKey'
 import DayCard from './DayCard'
 
-
 class WeekContainer extends React.Component {
 
     state = {
@@ -11,7 +10,7 @@ class WeekContainer extends React.Component {
     }
 
     componentDidMount = () => {
-        const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?zip=11102&units=imperial&APPID=${apiConfig.owmKey}`
+        const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?zip=11102&units=imperial&APPID=${apiConfig.openWeatherAPI}`
 
         fetch(weatherURL)
             .then(res => res.json())
@@ -27,7 +26,6 @@ class WeekContainer extends React.Component {
     formatDayCards = () => {
         return this.state.dailyData.map((reading, index) => <DayCard reading={reading} key={index} />)
     }
-
 
     render() {
 
