@@ -7,7 +7,6 @@ const DayCard = ({ reading }) => {
     newDate.setTime(weekday)
 
     const imgURL = `wi-owm-${reading.weather[0].id}`
-    console.log(imgURL);
     return (
         <div className="col-sm-2">
             <div className="card">
