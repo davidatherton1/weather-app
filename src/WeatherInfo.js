@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import apiConfig from './apiKey'
-import DayCard from './DayCard'
+import WeatherCard from './WeatherCard'
 import Search from './search'
 let zipcodes = require('zipcodes');
 
-class WeekContainer extends React.Component {
+class WeatherInfo extends React.Component {
     constructor(props) {
         super(props);
         this.cityname = zipcodes.lookup(55414).city;
@@ -49,22 +49,21 @@ class WeekContainer extends React.Component {
     };
 
     formatDayCards = () => {
-        return this.state.dailyData.map((reading, index) => <DayCard reading={reading} key={index} />)
+        return this.state.dailyData.map((reading, index) => <WeatherCard reading={reading} key={index} />)
     };
 
     render() {
         return (
+
             <div className="container">
                 <Search onSubmit={this.onFormSubmit}/>
                 <h1 className="display-1 jumbotron">{ this.cityname }, { this.statename } </h1>
                 <div className="row justify-content-center">
-
                     {this.formatDayCards()}
-
                 </div>
             </div>
         )
     }
 }
 
-export default WeekContainer;
+export default WeatherInfo;

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import WeekContainer from './WeekContainer';
-import Search from './search';
+import WeatherInfo from './WeatherInfo';
 
 class App extends Component {
   render() {
     return (
         <div className="App">
-          <WeekContainer />
+          <WeatherInfo />
         </div>
     );
   }

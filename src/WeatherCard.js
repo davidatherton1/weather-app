@@ -1,7 +1,7 @@
 import React from 'react';
 let moment = require('moment');
 
-const DayCard = ({ reading }) => {
+const WeatherCard = ({ reading }) => {
     let newDate = new Date();
     const weekday = reading.dt * 1000
     newDate.setTime(weekday)
@@ -11,7 +11,7 @@ const DayCard = ({ reading }) => {
         <div className="col-sm-2">
             <div className="card">
                 <h3 className="card-title">{moment(newDate).format('dddd')}</h3>
-                <p className="text-muted">{moment(newDate).format('MMMM Do, h:mm a')}</p>
+                <h5 className="text-muted">{moment(newDate).format('MMMM Do')}</h5>
                 <i className={imgURL}></i>
                 <h2>{Math.round(reading.main.temp)} °F</h2>
                 <div className="card-body">
@@ -22,4 +22,4 @@ const DayCard = ({ reading }) => {
     )
 }
 
-export default DayCard;
+export default WeatherCard;
